@@ -37,7 +37,7 @@
     <nodes xmi:type="eer:Attribute" xmi:id="_AzqlgKpAEfGr1vkr5996sg" name="progresso" AttributeLinkTarget="_ZX3P4KpHEfGr1vkr5996sg"/>
     <nodes xmi:type="eer:Relationship" xmi:id="_-LjeUKpAEfGr1vkr5996sg" name="promo" AttributeLinkSource="_pndSsKpBEfGr1vkr5996sg _qMpDYKpBEfGr1vkr5996sg" relationshipLink="_CHvAAKpBEfGr1vkr5996sg _CX9NUKpBEfGr1vkr5996sg"/>
     <nodes xmi:type="eer:Relationship" xmi:id="_-sEKYKpAEfGr1vkr5996sg" name="exige" AttributeLinkSource="_yJgr8KpEEfGr1vkr5996sg" relationshipLink="_ebykIKpEEfGr1vkr5996sg _h8ZkIKpEEfGr1vkr5996sg"/>
-    <nodes xmi:type="eer:Attribute" xmi:id="_fBXdwKpBEfGr1vkr5996sg" name="data_inicio" AttributeLinkTarget="_pndSsKpBEfGr1vkr5996sg"/>
+    <nodes xmi:type="eer:Attribute" xmi:id="_fBXdwKpBEfGr1vkr5996sg" name="data_inicio" type="DISCRIMINATOR" AttributeLinkTarget="_pndSsKpBEfGr1vkr5996sg"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_inOKIKpBEfGr1vkr5996sg" name="data_fim" AttributeLinkTarget="_qMpDYKpBEfGr1vkr5996sg"/>
     <nodes xmi:type="eer:AssociativeEntity" xmi:id="_o39dgKpDEfGr1vkr5996sg" name="Matricula" relationshipLink="_fr8iYKseEfGMcdR6HJs-TQ">
       <contains xmi:type="eer:Relationship" xmi:id="_xvqMEKpFEfGr1vkr5996sg" name="Matricula" AttributeLinkSource="_ZX3P4KpHEfGr1vkr5996sg _Z5bE0KpHEfGr1vkr5996sg _aDyhwKpHEfGr1vkr5996sg" relationshipLink="_f7fFIKscEfGMcdR6HJs-TQ _nrO_EKscEfGMcdR6HJs-TQ"/>
