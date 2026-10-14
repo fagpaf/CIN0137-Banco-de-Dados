@@ -1,10 +1,4 @@
--- ============================================================================
--- ARQUIVO: plsql/04_packages_triggers.sql
--- ITENS DA CHECKLIST: CREATE OR REPLACE PACKAGE, PACKAGE BODY, 
--- TRIGGER (COMANDO), TRIGGER (LINHA).
--- ============================================================================
-
--- 1. [CREATE OR REPLACE PACKAGE]
+-- 1. CREATE OR REPLACE PACKAGE
 CREATE OR REPLACE PACKAGE pkg_financeiro AS
     FUNCTION fn_get_preco_liquido (
         p_codigo_curso IN NUMBER,
@@ -13,7 +7,7 @@ CREATE OR REPLACE PACKAGE pkg_financeiro AS
 END pkg_financeiro;
 /
 
--- 2. [CREATE OR REPLACE PACKAGE BODY]
+-- 2. CREATE OR REPLACE PACKAGE BODY
 CREATE OR REPLACE PACKAGE BODY pkg_financeiro AS
     FUNCTION fn_get_preco_liquido (
         p_codigo_curso IN NUMBER,
@@ -33,19 +27,19 @@ CREATE OR REPLACE PACKAGE BODY pkg_financeiro AS
 END pkg_financeiro;
 /
 
--- 3. [CREATE OR REPLACE TRIGGER (COMANDO)]
+-- 3. CREATE OR REPLACE TRIGGER (COMANDO)
 CREATE OR REPLACE TRIGGER trg_auditoria_cupom
 BEFORE INSERT OR UPDATE OR DELETE ON Cupom
 BEGIN
     IF DELETING THEN
-        DBMS_OUTPUT.PUT_LINE('[AUDITORIA COMANDO] Remoção de cupons identificada.');
+        DBMS_OUTPUT.PUT_LINE('AUDITORIA COMANDO Remoção de cupons identificada.');
     ELSIF INSERTING THEN
-        DBMS_OUTPUT.PUT_LINE('[AUDITORIA COMANDO] Inserção de novos cupons no catálogo.');
+        DBMS_OUTPUT.PUT_LINE('AUDITORIA COMANDO Inserção de novos cupons no catálogo.');
     END IF;
 END trg_auditoria_cupom;
 /
 
--- 4. [CREATE OR REPLACE TRIGGER (LINHA)]
+-- 4. CREATE OR REPLACE TRIGGER (LINHA)
 CREATE OR REPLACE TRIGGER trg_auto_status_duvida
 BEFORE UPDATE ON Duvida
 FOR EACH ROW

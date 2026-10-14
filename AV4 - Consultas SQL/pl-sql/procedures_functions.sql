@@ -1,10 +1,4 @@
--- ============================================================================
--- ARQUIVO: plsql/02_procedures_functions.sql
--- ITENS DA CHECKLIST: CREATE PROCEDURE, CREATE FUNCTION, %TYPE, %ROWTYPE, 
--- SELECT … INTO, USO DE PARÂMETROS (IN, OUT, IN OUT), WHILE LOOP.
--- ============================================================================
-
--- 1. [CREATE FUNCTION], [%TYPE], [WHILE LOOP]
+-- 1. CREATE FUNCTION, %TYPE, WHILE LOOP
 CREATE OR REPLACE FUNCTION fn_indice_qualidade_professor (
     p_cpf_professor IN Professor.cpf%TYPE
 ) RETURN NUMBER IS
@@ -22,7 +16,7 @@ BEGIN
     SELECT COUNT(*) INTO v_qtd_cursos
     FROM Leciona WHERE cpf_professor = p_cpf_professor;
 
-    -- [WHILE LOOP]
+    -- WHILE LOOP
     WHILE v_contador <= v_qtd_cursos LOOP
         v_bonus_cursos := v_bonus_cursos + 2;
         v_contador := v_contador + 1;
@@ -38,16 +32,16 @@ BEGIN
 END fn_indice_qualidade_professor;
 /
 
--- 2. [CREATE PROCEDURE], [%ROWTYPE], [SELECT ... INTO], [PARÂMETROS IN, OUT, IN OUT]
+-- 2. CREATE PROCEDURE, %ROWTYPE, SELECT ... INTO, PARÂMETROS IN, OUT, IN OUT
 CREATE OR REPLACE PROCEDURE prc_atualizar_progresso (
     p_cpf_aluno       IN Matricula.cpf_aluno%TYPE,
     p_codigo_curso    IN Matricula.codigo_curso%TYPE,
     p_incremento_prog IN OUT NUMBER,
     p_msg_resultado   OUT VARCHAR2
 ) IS
-    v_matricula Matricula%ROWTYPE; -- [%ROWTYPE]
+    v_matricula Matricula%ROWTYPE; -- %ROWTYPE
 BEGIN
-    -- [SELECT ... INTO]
+    -- SELECT ... INTO
     SELECT * INTO v_matricula
     FROM Matricula
     WHERE cpf_aluno = p_cpf_aluno AND codigo_curso = p_codigo_curso;
